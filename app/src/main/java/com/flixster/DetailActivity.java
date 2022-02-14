@@ -30,6 +30,9 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvOverview;
     RatingBar ratingBar;
     YouTubePlayerView youTubePlayerView;
+    TextView tvRating;
+    TextView tvReleaseDate;
+    TextView tvPopularity;
 
 
 
@@ -42,11 +45,17 @@ public class DetailActivity extends YouTubeBaseActivity {
         tvOverview = findViewById(R.id.tvOverview);
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
+        tvRating = findViewById(R.id.tvRating);
+        tvReleaseDate = findViewById(R.id.tvReleaseDate);
+        tvPopularity = findViewById((R.id.tvPopularity));
 
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
-        ratingBar.setRating((float) movie.getRating());
+        ratingBar.setRating((float)movie.getRating());
+        tvRating.setText(String.format("%s/10 of %s votes", movie.getRating(), movie.getVoteCount()));
+        tvReleaseDate.setText(String.format("Released: %s", movie.getReleaseDate()));
+        tvPopularity.setText(String.format("Popularity: %s", movie.getPopularity()));
 
 
         AsyncHttpClient client = new AsyncHttpClient();
