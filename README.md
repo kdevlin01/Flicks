@@ -26,7 +26,8 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 
 ### Notes
 
-Describe any challenges encountered while building the app.
+Youtube plauer is incompatible with API 30 and up, so I tried using API 29 in my emulator, but for some reason it would not work.
+Ergo, I ended up using an emulator with API 28 for the second portion of this project.
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
